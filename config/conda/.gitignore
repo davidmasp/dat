@@ -1,0 +1,9 @@
+# Ignore everything
+*
+# but yml files
+!*.yml
+# and readme.md
+!README.md
+#and self
+!.gitignore
+!*.py
