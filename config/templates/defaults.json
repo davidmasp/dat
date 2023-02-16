@@ -1,0 +1,8 @@
+{
+    "singularitypy_template": {
+        "name": "test",
+        "base_image": "ubuntu:18.04",
+        "author": "DMP",
+        "version": "0.0.1"
+    }
+}

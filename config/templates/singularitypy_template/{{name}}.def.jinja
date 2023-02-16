@@ -1,0 +1,23 @@
+Bootstrap: library
+From: {{base_image}}
+Stage: build
+
+%environment
+    PYTHONUNBUFFERED=1
+
+%files
+    ./requirements.txt /requirements.txt
+
+%post
+    apt-get update
+    apt-get install -y python3 python3-pip python3-setuptools
+    pip3 install -r requirements.txt
+
+%labels
+    Author {{author}}
+    Version v{{version}}
+
+%help
+    This is a demo container used to illustrate a def file that uses all
+    supported sections.
+
