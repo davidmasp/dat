@@ -2,3 +2,5 @@
 # mac specific
 .DS_Store
 
+## Over the whole project
+.env
