@@ -38,7 +38,9 @@ def render_from_folder(variables, folder, output_folder):
     for ti in templates_list:
         ## render file name
         oname = render_file_name(env, ti, variables)
-        oname2 = os.path.join(output_folder, os.path.basename(oname))
+        ## remove the template folder name
+        oname = oname.replace(folder, "")
+        oname2 = os.path.join(output_folder, oname)
         render_from_file(env, ti, variables, oname2)
     return True
 

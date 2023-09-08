@@ -25,7 +25,18 @@ def cli(debug):
               help='json directory with variable names')
 @click.option('--verbose/--quiet', default=False)
 def cli_files(template, json, variables, output, verbose):
-    ## heck if json argument is given
+    ### check if template is a directory and exists
+    if os.path.isdir(template):
+        if verbose:
+            click.echo("Using template folder")
+    else:
+        raise Exception("Template is not a folder")
+    
+    ## check if folder name ends in /, maybe there is a better way?
+    if template.endswith('/'):
+        template = template[:-1]
+
+    ## check if json argument is given
     if json:
         if verbose:
             click.echo("Using json file, cli variables and defaults will be ignored")
@@ -56,4 +67,3 @@ def cli_files(template, json, variables, output, verbose):
 
 if __name__ == "__main__":
     files = "codes.txt"
-

@@ -14,7 +14,7 @@ def hello(pkgs, verbose, all, user):
     current_dir = os.getcwd()
     if all:
         if pkgs is not None:
-            rauseValueError('Cannot specify both --all and --pkgs')
+            raise ValueError('Cannot specify both --all and --pkgs')
         pkgs_files_raw = os.listdir('.')
         pkgs_files = [f for f in pkgs_files_raw if os.path.isdir(f)]
     else:

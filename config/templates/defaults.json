@@ -4,5 +4,15 @@
         "base_image": "ubuntu:18.04",
         "author": "DMP",
         "version": "0.0.1"
+    }, 
+    "data_template": {
+        "source": "MISC",
+        "type": "muts",
+        "author": "DMP"
+    }, 
+    "sandbox_template": {
+        "title": "earthsize",
+        "description": "measure the size of the earth",
+        "author": "DMP"
     }
 }

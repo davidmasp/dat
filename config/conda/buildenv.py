@@ -14,7 +14,7 @@ def hello(globally, envs, verbose, all, delete):
     """Simple program that builds conda environtments using the shell."""
     if all:
         if envs is not None:
-            rauseValueError('Cannot specify both --all and --envs')
+            raise ValueError('Cannot specify both --all and --envs')
         envs_files_raw = os.listdir('.')
         envs_files = [f for f in envs_files_raw if f.endswith('.yml')]
     else:
