@@ -1,0 +1,31 @@
+
+
+### HERE we define a figure (by starting a [[figures]] block)
+[[figures]]
+name = "figureXX_template"
+path = "./main_figures"
+
+### then we add panels to that figure with a panel sub-table
+[[figures.panels]]
+root = "data/dataSimple"
+path = "figures/mutationsColon"
+fileName = "prefilter_clones.pdf"
+version = "latest"
+
+[[figures.panels]]
+root = "data/dataSimple"
+path = "figures/mutationsColon"
+fileName = "clone_size_vs_age.pdf"
+version = "latest"
+
+### WE can add a new figure folder as such
+
+[[figures]]
+name = "figureXX_template"
+path = "./supp_figures"
+
+[[figures.panels]]
+root = "data/dataSimple"
+path = "figures/mutationsColon"
+fileName = "clone_size_vs_age.pdf"
+version = "2024-06-17"

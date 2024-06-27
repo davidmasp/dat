@@ -6,49 +6,58 @@ import os
 import json
 import pdb
 
-def render_from_file(envir, file_path, variables, output_path):
-    """
-    Render a jinja template from a file path
-    """
-    template = envir.get_template(os.path.basename(file_path))
-    out_template = template.render(variables)
-    with open(output_path, "w") as fh:
-        fh.write(out_template)
+import toml
 
-def render_file_name(envir, file_name, variables):
-    if file_name.endswith(".jinja"):
-        file_name = file_name[:-6]
-    tmpl = envir.from_string(file_name)
-    return tmpl.render(variables)
+def create_directory_structure(template_dir, output_dir, context):
+    """
+    This function takes a template dir and creates a new directory structure
+    based on the information in context.
 
-def render_from_folder(variables, folder, output_folder):
-    """
-    Render a jinja template from a folder path
-    """
-    # create output folder
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
-    else:
-        print("Output folder already exists. Exiting.")
-        exit()
-        ##make jinja environment
+        * `template_dir`: The directory containing the template structure
+        * `output_dir`: The directory where the new structure will be created
+        * `context`: A dictionary containing variables to be used in rendering
     
-    env = Environment(loader=FileSystemLoader(folder))
-    templates_list = env.list_templates()
-    for ti in templates_list:
-        ## render file name
-        oname = render_file_name(env, ti, variables)
-        ## remove the template folder name
-        oname = oname.replace(folder, "")
-        oname2 = os.path.join(output_folder, oname)
-        render_from_file(env, ti, variables, oname2)
-    return True
+    The structure of the template directory should looks like this:
 
-def render_folder_from_fromJson(var_file, folder, output_folder):
-    ## load var dict from default json file
-    with open(var_file, "r") as fh:
-        var_dict = json.load(fh)
-    current_dict = var_dict[folder]
+    ```
+    template/
+    ├── {{project_name}}/
+    │   ├── src/
+    │   │   └── main.py
+    │   ├── tests/
+    │   │   └── test_main.py
+    │   └── README.md
+    └── LICENSE
+    ```
+    """
+    # Create Jinja2 environment
+    env = Environment(loader=FileSystemLoader(template_dir))
+    # Walk through the template directory
+    for root, dirs, files in os.walk(template_dir):
+        # Create relative path
+        rel_path = os.path.relpath(root, template_dir)
+        # Render the path using Jinja2
+        rendered_path = env.from_string(rel_path).render(context)
+        # Create the directory in the output
+        os.makedirs(os.path.join(output_dir, rendered_path), exist_ok=True)
+        # Process files
+        for file in files:
+            # Render the filename
+            rendered_filename = env.from_string(file).render(context)
+            
+            # Read and render the file content
+            template = env.get_template(os.path.join(rel_path, file))
+            rendered_content = template.render(context)
+            
+            # Write the rendered content to the output file
+            output_file_path = os.path.join(output_dir, rendered_path, rendered_filename)
+            with open(output_file_path, 'w') as f:
+                f.write(rendered_content)
 
-# =============================
-# PARAMS
+def read_defaults(defaults_file):
+    """
+    Read the defaults file and return the content as a dictionary.
+    """
+    with open(defaults_file, 'r') as f:
+        defaults = toml.load(f)
+    return defaults
