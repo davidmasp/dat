@@ -4,10 +4,10 @@ nextflow.enable.dsl=2
 // general parsm
 today = new Date().format('yyyy-MM-dd')
 
-params.outdir = "results/"
-params.figdir = "figures/"
-params.tmpdir = "TMP"
-params.tabdir = "tables"
+params.outdir = {{outdir}}
+params.figdir = {{figdir}}
+params.tmpdir = {{tmpdir}}
+params.tabdir = {{tabdir}}
 
 // folder params
 params.index = "$baseDir/index.csv"

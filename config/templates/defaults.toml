@@ -1,0 +1,15 @@
+
+[data_pipeline]
+nfprof = "sge,hpc,tower"
+author = "DMP"
+outdir = "results.nobackup"
+figdir = "figures.nobackup"
+tmpdir = "TMP.nobackup"
+tabdir = "tables.nobackup"
+## camelcase
+name="dataMisc"
+
+[data_simple]
+author = "DMP"
+## camelcase
+name="dataMisc"
