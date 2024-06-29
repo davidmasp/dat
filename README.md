@@ -16,28 +16,35 @@ git checkout main
 ### Install the datpy pacakge (one-time)
 
 ```bash
-cd src
-./buildpkg.py -p datpy
-cd ..
+cd src/datpy
+pip install .
+cd ../..
 ```
 
-### Create a new default data folder
+### Create a default folder for data
 
-```
+```bash
 cd data
-dat template -i ../config/templates/data_template -v 'type=muts;source=SELF;author=DMP' -o ./muts_SELF
+dat template -t data_simple -o dataSimple -v "name=My Data Simple Folder"
 ```
 
-### Create a new default sandbox folder
+### List the available templates with
 
-```
-cd sandbox
-dat template -i ../config/templates/sandbox_template -v 'title=earthsize;description=check the size of the earth;author=DMP' -o ./earthsize
+```bash
+dat template --root config/templates -l
 ```
 
-### Create a new default container folder
+### Gather relevant panels to a central location
 
+This command requires a configuration file (`panels.toml`). This is
+by default located in [`figures/panels.toml`](figures/panels.toml), but it
+is not required.
+
+```bash
+dat figures -o
 ```
-cd containers
-dat template -i ../config/templates/singularitypy_template -v 'name=scikit;author=DM' -o ./scikit
-```
+
+### Sync data from a server
+
+(WIP)
+
