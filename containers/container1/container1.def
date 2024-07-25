@@ -1,0 +1,36 @@
+Bootstrap: library
+From: ubuntu:18.04
+Stage: build
+
+%files
+    ./README.md /README.md
+
+%environment
+    export MSSG="Hello world!"
+    export PATH="/usr/games:$PATH"
+    export LC_ALL=en_US.UTF-8
+    export LANG=en_US.UTF-8
+    export LANGUAGE=en_US.UTF-8
+
+%post
+    apt-get update
+    apt-get install -y cowsay
+    apt-get -y install fortune
+    cat /README.md
+    NOW=`date`
+    echo "export NOW=\"${NOW}\"" >> $SINGULARITY_ENVIRONMENT
+
+%runscript
+    echo "Container was created $NOW" 
+    exec fortune | cowsay
+    exec cowsay $MSSG
+    exec cowsay "$*"
+
+%labels
+    Author athor@name
+    Version v0.0.1
+
+%help
+    This is a demo container
+
+
