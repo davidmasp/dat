@@ -1,0 +1,11 @@
+
+default_connection = "con1"
+
+# this is the name of the connection
+[con1]
+# this is the name of host in the ssh config file
+sshhost = "server"
+# this is the path of the project in the remote host
+remoteroot = "~/projects/dat"
+# this is the name of the project path in the current computer
+localroot = "~/projects/dat"

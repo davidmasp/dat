@@ -1,11 +1,11 @@
 # Containers
 
+Note that: Preferably use singularity when possible. Docker is almost never available at HPCs.
+
 ## Notes
 
-Build a docker file using:
+How to build a container: 
 
+```bash
+singularity build --remote test.sif test.def
 ```
-docker build -t name -f Dockerfile
-```
-
-

@@ -1,16 +1,10 @@
 #!/usr/bin/env python
 
 import subprocess
-import click
 import os
+import click
 
-@click.command()
-@click.option('-g', '--globally' ,is_flag=True, help='Install envs globally')
-@click.option('-e', '--envs', default=None, help = 'Comma separated list of environments to build.')
-@click.option('-v', '--verbose', is_flag=True, help='Enables verbose mode')
-@click.option('-a', '--all', is_flag=True, help='Builds all environtments.')
-@click.option('-d', '--delete', is_flag=True, help='Deletes all environtments.')
-def hello(globally, envs, verbose, all, delete):
+def build_conda(globally, envs, verbose, all, delete):
     """Simple program that builds conda environtments using the shell."""
     if all:
         if envs is not None:
@@ -45,5 +39,4 @@ def hello(globally, envs, verbose, all, delete):
                 env_name2 = "./{}".format(env_name)
                 subprocess.run(["conda", "env", "create", "-f", env, "--prefix", env_name2])
 
-if __name__ == '__main__':
-    hello()
+

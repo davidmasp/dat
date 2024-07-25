@@ -1,5 +1,3 @@
-# Sandbox - PRJ
+# Sandbox 
 
-## Rules
-
-* Folder names should use `camelCase`
+This directory contains analysis performed on the generated data.

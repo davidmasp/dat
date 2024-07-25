@@ -34,7 +34,7 @@ dat template -t data_simple -o dataSimple -v "name=My Data Simple Folder"
 dat template --root config/templates -l
 ```
 
-### Gather relevant panels to a central location
+### Gather relevant panel figures to a central location
 
 This command requires a configuration file (`panels.toml`). This is
 by default located in [`figures/panels.toml`](figures/panels.toml), but it
@@ -44,7 +44,24 @@ is not required.
 dat figures -o
 ```
 
+### Build automatically conda environments
+
+See [this](environments/README.md)
+
 ### Sync data from a server
 
-(WIP)
+We need to set up a config file in the root directory (of the project, for here would be ~/projects/dat) named `.datsync.toml`.
+See [this file](.datsync.toml) as example.
+
+```bash
+# for files
+dat sync file.txt
+# for folders
+dat sync folder --dot
+```
+
+Note that the user needs to be in the same directory as the remote session.
+
+Also note that to sync files in nested directories we need to create the directories locally too.
+
 

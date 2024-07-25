@@ -4,6 +4,8 @@ import os
 import json as jspy
 import dat.templates as tmp
 import dat.figures as fig
+import dat.condaenvs as conda
+import dat.sync as sync
 from datetime import datetime
 
 import pdb
@@ -82,6 +84,25 @@ def cli_template(list, root, template, variables, defaults, output, verbose):
     tmp.create_directory_structure(
         template_dir, output, var_dict
     )
+
+
+@cli.command('conda')
+@click.option('-g', '--globally' ,is_flag=True, help='Install envs globally')
+@click.option('-e', '--envs', default=None, help = 'Comma separated list of environments to build.')
+@click.option('-v', '--verbose', is_flag=True, help='Enables verbose mode')
+@click.option('-a', '--all', is_flag=True, help='Builds all environtments.')
+@click.option('-d', '--delete', is_flag=True, help='Deletes all environtments.')
+def cli_conda(globally, envs, verbose, all, delete):
+    conda.build_conda(globally, envs, verbose, all, delete)
+
+@cli.command('sync')
+@click.argument('target')
+@click.option('-c', '--connection',  default=None, help='ssh host to use, defaults to default_connection')
+@click.option('-d', '--dot', is_flag=True, help='Syncs to .')
+@click.option('--dry', is_flag=True, help='print command and exit')
+def cli_conda(target, connection, dot, dry):
+    sync.sync_file(target, connection, dot, dry)
+
 
 if __name__ == "__main__":
     files = "codes.txt"
