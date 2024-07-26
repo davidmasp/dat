@@ -7,5 +7,6 @@ Note that: Preferably use singularity when possible. Docker is almost never avai
 How to build a container: 
 
 ```bash
-singularity build --remote test.sif test.def
+cd container1
+singularity build --remote container1.sif container1.def
 ```

@@ -28,6 +28,13 @@ cd data
 dat template -t data_simple -o dataSimple -v "name=My Data Simple Folder"
 ```
 
+### Create a new container folder
+
+```bash
+cd containers
+dat template -t singularity_py -o test_py -v "name=example2Py,version=0.0.2"
+```
+
 ### List the available templates with
 
 ```bash
@@ -63,5 +70,3 @@ dat sync folder --dot
 Note that the user needs to be in the same directory as the remote session.
 
 Also note that to sync files in nested directories we need to create the directories locally too.
-
-

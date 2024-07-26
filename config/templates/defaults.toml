@@ -13,3 +13,10 @@ name="dataMisc"
 author = "DMP"
 ## camelcase
 name="dataMisc"
+
+[singularity_py]
+author = "DMP"
+## camelcase
+name="examplePy"
+base_image="ubuntu:18.04"
+version="0.0.1"
