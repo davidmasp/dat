@@ -1,8 +1,8 @@
 
 .down.done: scripts/download.sh
-	./download.sh
+	./scripts/download.sh
 
 all: .down.done
 
-clean:
-	sh clean.sh
+clean: scripts/clean.sh
+	sh scripts/clean.sh

@@ -6,17 +6,25 @@ outdir = "results.nobackup"
 figdir = "figures.nobackup"
 tmpdir = "TMP.nobackup"
 tabdir = "tables.nobackup"
-## camelcase
-name="dataMisc"
+## snakecase
+name="data_simple"
 
 [data_simple]
 author = "DMP"
-## camelcase
-name="dataMisc"
+## snakecase
+name="data_simple"
+mail="name.surname@company.com"
 
 [singularity_py]
 author = "DMP"
 ## camelcase
-name="examplePy"
+name="example_py"
 base_image="ubuntu:18.04"
 version="0.0.1"
+
+[reports_simple]
+author = "DMP"
+name = "Q324"
+affiliation1 = "Human Technopole"
+affiliation2 = "Center for Computational Biology"
+affiliation3 = "Sottoriva Lab"

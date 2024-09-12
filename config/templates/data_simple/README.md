@@ -3,6 +3,8 @@
 * Date: {{ today }}
 * Author: {{ author }}
 
+## Docs
+
 ## Usage
 
 Download or link the raw data using:
@@ -11,13 +13,7 @@ Download or link the raw data using:
 make download
 ```
 
-Create the index and run the pipeline with:
-
-```
-make all
-```
-
-Delete data using:
+Delete intermediary data using:
 
 ```
 make clean

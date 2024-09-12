@@ -9,8 +9,18 @@ Template repository for data analysis projects.
 ```bash
 gh repo create <name> --clone --private --template davidmasp/dat
 cd <name>
-git checkout -b template
-git checkout main
+git remote add template git@github.com:davidmasp/dat.git
+```
+
+### When checking for template updates run
+
+🚨 NOTE: this will create a bunch of merge conflicts for the
+files that have been updated, you should accept "current"
+changes for the ones that you don't want to be over-written.
+
+```bash
+git fetch --all
+git merge template/main --allow-unrelated-histories
 ```
 
 ### Install the datpy pacakge (one-time)
@@ -26,6 +36,13 @@ cd ../..
 ```bash
 cd data
 dat template -t data_simple -o dataSimple -v "name=My Data Simple Folder"
+```
+
+### Create a new report folder for a quaterly report
+
+```bash
+cd reports
+dat template -o Q324 --template reports_simple --variables "name=Q324" 
 ```
 
 ### Create a new container folder

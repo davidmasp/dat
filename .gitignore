@@ -4,3 +4,6 @@
 
 ## Over the whole project
 .env
+
+# no git directories
+*.nogit
