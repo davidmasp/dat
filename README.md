@@ -31,6 +31,16 @@ pip install .
 cd ../..
 ```
 
+or using venv and uv
+
+```bash
+cd src/datpy
+uv venv
+source .venv/bin/activate
+uv pip install .
+cd ../..
+```
+
 ### Create a default folder for data
 
 ```bash
