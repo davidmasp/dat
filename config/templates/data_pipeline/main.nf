@@ -1,9 +1,12 @@
 
 nextflow.enable.dsl=2
 
-// general parsm
-today = new Date().format('yyyy-MM-dd')
+// functions
+def getToday() {
+    new Date().format('yyyy-MM-dd')
+}
 
+// general params
 params.outdir = {{outdir}}
 params.figdir = {{figdir}}
 params.tmpdir = {{tmpdir}}
@@ -28,9 +31,9 @@ process XXXX {
 
 // a figure producing process
 process YYYY {
-  publishDir "${params.figdir}/YYY/${today}", mode: 'copy', pattern: "*.pdf"
-  publishDir "${params.tabdir}/YYY/${today}", mode: 'copy', pattern: "*.json"
-  publishDir "${params.tabdir}/YYY/${today}", mode: 'copy', pattern: "*.csv"
+  publishDir "${params.figdir}/YYY/${getToday()}", mode: 'copy', pattern: "*.pdf"
+  publishDir "${params.tabdir}/YYY/${getToday()}", mode: 'copy', pattern: "*.json"
+  publishDir "${params.tabdir}/YYY/${getToday()}", mode: 'copy', pattern: "*.csv"
   label 'fullR'
   input:
     path(tabfiles, stageAs: "chrtabs/*")
@@ -39,7 +42,7 @@ process YYYY {
     path("sex_determination.pdf")
   script: 
   """
-  echo "XXXX" > ${info}_XXXXX.tab
+  echo "XXXX" > XXXX.csv
   """
 }
 
