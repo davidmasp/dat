@@ -1,0 +1,5 @@
+copy:
+	uv run scripts/figures.py copy --root ..
+
+check:
+	uv run scripts/figures.py check
