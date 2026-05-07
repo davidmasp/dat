@@ -1,13 +1,12 @@
-# {{ name }}
+# sandbox_analysis_name
 
-* Date: {{ today }}
-* Author: {{ author }}
+* Date: YYYY-MM-DD
+* Author: YOUR_NAME
 
 ## Usage
 
 Regenerate the analysis with:
 
 ```bash
-make all
+just all
 ```
-

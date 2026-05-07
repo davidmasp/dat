@@ -1,5 +1,5 @@
 Bootstrap: library
-From: {{base_image}}
+From: ubuntu:18.04
 Stage: build
 
 %environment
@@ -14,10 +14,9 @@ Stage: build
     pip3 install -r requirements.txt
 
 %labels
-    Author {{author}}
-    Version v{{version}}
+    Author YOUR_NAME
+    Version v0.0.1
 
 %help
     This is a demo container used to illustrate a def file that uses all
     supported sections.
-

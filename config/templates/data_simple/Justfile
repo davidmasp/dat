@@ -1,0 +1,13 @@
+set shell := ["bash", "-cu"]
+
+# Example syntax:
+# recipe_name:
+#   echo "hello from just"
+
+download:
+  ./scripts/download.sh
+
+all: download
+
+clean:
+  sh scripts/clean.sh

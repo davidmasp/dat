@@ -1,28 +1,17 @@
 # Templates
 
-:alert: [WIP]
-
-Directory to store template folders for the different
-sections of the project (aka: sandbox, data or metadata)
+Directory with starter folders for project sections (sandbox, data,
+reports, and containers).
 
 ## Usage
 
-To create a new folder in the project run:
+These templates are plain files and are meant to be used by copy/paste.
+Copy one template folder, rename it, then edit placeholders directly in
+the copied files.
 
-### Data dirs
+### Example
 
-For data or metadata directories run:
-
-```
-./template.py data --source MISC --type MUTS
-# or
-./template.py data --source MISC --type MUTS --dir ../../metadata
-```
-
-### Sandbox dirs
-
-For sandbox directories run:
-
-```
-./template.py sandbox --name analysisOne --nf
+```bash
+cp -R data_simple ../../data/my_data_source
+cp -R sandbox_simple ../../sandbox/my_exploratory_analysis
 ```

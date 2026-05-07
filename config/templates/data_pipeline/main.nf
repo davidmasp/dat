@@ -7,10 +7,10 @@ def getToday() {
 }
 
 // general params
-params.outdir = "{{outdir}}"
-params.figdir = "{{figdir}}"
-params.tmpdir = "{{tmpdir}}"
-params.tabdir = "{{tabdir}}"
+params.outdir = "results.nobackup"
+params.figdir = "figures.nobackup"
+params.tmpdir = "TMP.nobackup"
+params.tabdir = "tables.nobackup"
 
 // folder params
 params.index = "$baseDir/index.csv"

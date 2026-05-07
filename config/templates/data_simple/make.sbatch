@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#SBATCH --job-name={{ name }}
+#SBATCH --job-name=data_simple_job
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user={{ mail }}
+#SBATCH --mail-user=name.surname@company.com
 #SBATCH --time=00:20:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
@@ -15,4 +15,4 @@
 #SBATCH --error=.log_%j.log
 
 # source .env
-make all
+just all

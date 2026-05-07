@@ -1,0 +1,14 @@
+set shell := ["bash", "-cu"]
+
+# Example syntax:
+# recipe_name arg="value":
+#   echo {{arg}}
+
+plot:
+  ./scripts/plot.R
+  @echo "Figures done"
+
+all: plot
+
+clean:
+  sh scripts/clean.sh

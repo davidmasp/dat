@@ -1,0 +1,15 @@
+set shell := ["bash", "-cu"]
+
+# Example syntax:
+# recipe_name:
+#   command
+
+requirements:
+  @echo "Compile reqs"
+  pip-compile requirements.in
+
+container: requirements
+  @echo "Compile image for container"
+  sudo singularity build --notest container.sif container.def
+
+all: container

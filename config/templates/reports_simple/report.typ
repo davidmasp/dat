@@ -3,16 +3,16 @@
 #import exercise: project, task, subtask, todo
 
 #show: project.with(
-    title: "{{ name }}",
+    title: "Quarterly Report",
 
-    university: [{{ affiliation1 }}],
-    institute: [{{affiliation2}}],
-    seminar: [{{affiliation3}}],
+    university: [Organization Name],
+    institute: [Department or Institute],
+    seminar: [Team or Group],
 
     abstract: lorem(100),
     show-outline: true,
 
-    author: "{{ author }}",
+    author: "YOUR_NAME",
 
     show-solutions: false
 )
@@ -52,5 +52,4 @@
 // See @harry and then go to @electronic
 
 // #bibliography("../works.yaml")
-
 

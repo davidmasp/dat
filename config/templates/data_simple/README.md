@@ -1,7 +1,7 @@
-# {{ name }}
+# data_simple_name
 
-* Date: {{ today }}
-* Author: {{ author }}
+* Date: YYYY-MM-DD
+* Author: YOUR_NAME
 
 ## Docs
 
@@ -9,14 +9,12 @@
 
 Download or link the raw data using:
 
-```
-make download
+```bash
+just download
 ```
 
 Delete intermediary data using:
 
+```bash
+just clean
 ```
-make clean
-```
-
-

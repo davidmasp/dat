@@ -1,26 +1,24 @@
-# {{ name }}
+# data_pipeline_name
 
-* Date: {{ today }}
-* Author: {{ author }}
+* Date: YYYY-MM-DD
+* Author: YOUR_NAME
 
 ## Usage
 
 Download or link the raw data using:
 
-```
-make download
+```bash
+just download
 ```
 
 Create the index and run the pipeline with:
 
-```
-make all
+```bash
+just all
 ```
 
 Delete data using:
 
+```bash
+just clean
 ```
-make clean
-```
-
-

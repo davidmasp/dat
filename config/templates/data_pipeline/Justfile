@@ -1,0 +1,19 @@
+set shell := ["bash", "-cu"]
+
+# Example syntax:
+# recipe_name dependency_name:
+#   echo "run recipe body"
+
+download:
+  ./scripts/download.sh
+
+index: download
+  ./scripts/build_index.sh
+
+pipeline: index
+  nextflow run main.nf -profile "${NFPROF}" -resume --index index.csv
+
+all: pipeline
+
+clean:
+  sh scripts/clean.sh

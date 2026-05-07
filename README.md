@@ -2,6 +2,8 @@
 
 Template repository for data analysis projects.
 
+See [CHANGELOG.md](CHANGELOG.md) for a history of changes.
+
 ## Usage
 
 ### Create a new repo from the template
