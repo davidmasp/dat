@@ -1,0 +1,22 @@
+set shell := ["bash", "-cu"]
+
+pipeline := "/path/to/pipeline"
+nfprofiles := "micromamba,slurm,tower"
+scratch_dir := "/path/to/scratch"
+
+index := "index.csv"
+
+# Example syntax:
+# recipe_name:
+#   echo "run recipe body"
+
+index:
+  Rscript scripts/build_index.R {{index}}
+
+run: index
+  nextflow run {{pipeline}} -profile {{nfprofiles}} -w {{work_dir}} -resume --index {{index}}
+
+clean-scratch:
+  rm -rf {{scratch_dir}}
+
+

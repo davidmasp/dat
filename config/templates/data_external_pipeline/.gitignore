@@ -1,0 +1,15 @@
+*nobackup*
+
+.nextflow*
+.nf-test*
+
+scratch
+work
+results
+
+*.trace
+*.report
+*.timeline.html
+*.dag.*
+
+.Rhistory

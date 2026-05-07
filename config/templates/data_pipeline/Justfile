@@ -1,4 +1,7 @@
+
 set shell := ["bash", "-cu"]
+
+nfprofiles := "micromamba,slurm,tower"
 
 # Example syntax:
 # recipe_name dependency_name:
@@ -11,9 +14,11 @@ index: download
   ./scripts/build_index.sh
 
 pipeline: index
-  nextflow run main.nf -profile "${NFPROF}" -resume --index index.csv
+  nextflow run main.nf -profile {{nfprofiles}} -resume --index index.csv
 
 all: pipeline
 
 clean:
   sh scripts/clean.sh
+
+

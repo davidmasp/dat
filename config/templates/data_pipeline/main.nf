@@ -1,16 +1,11 @@
 
 nextflow.enable.dsl=2
 
-// functions
-def getToday() {
-    new Date().format('yyyy-MM-dd')
-}
-
 // general params
-params.outdir = "results.nobackup"
-params.figdir = "figures.nobackup"
-params.tmpdir = "TMP.nobackup"
-params.tabdir = "tables.nobackup"
+params.outdir = "results"
+params.tmpdir = "${params.outdir}/TMP"
+params.figdir = "${params.outdir}/figures"
+params.tabdir = "${params.outdir}/tables"
 
 // folder params
 params.index = "$baseDir/index.csv"
@@ -31,9 +26,10 @@ process XXXX {
 
 // a figure producing process
 process YYYY {
-  publishDir "${params.figdir}/YYY/${getToday()}", mode: 'copy', pattern: "*.pdf"
-  publishDir "${params.tabdir}/YYY/${getToday()}", mode: 'copy', pattern: "*.json"
-  publishDir "${params.tabdir}/YYY/${getToday()}", mode: 'copy', pattern: "*.csv"
+  publishDir "${params.figdir}/YYY/", mode: 'copy', pattern: "*.png"
+  publishDir "${params.figdir}/YYY/", mode: 'copy', pattern: "*.pdf"
+  publishDir "${params.tabdir}/YYY/", mode: 'copy', pattern: "*.json"
+  publishDir "${params.tabdir}/YYY/", mode: 'copy', pattern: "*.csv"
   label 'fullR'
   input:
     path(tabfiles, stageAs: "chrtabs/*")
@@ -48,11 +44,12 @@ process YYYY {
 
 workflow {
 
-  Channel.fromPath(params.index) \
+  input_ch = channel.fromPath(params.index) \
       | splitCsv(header:true) \
       | map { row-> tuple(row.id, file(row.path)) } \
       | set{input_ch}
 
   XXXX(input_ch)
+  YYYY(XXXX.out.tab)
 
 }
