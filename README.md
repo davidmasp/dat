@@ -11,19 +11,36 @@ See [CHANGELOG.md](CHANGELOG.md) for a history of changes.
 ```bash
 gh repo create <name> --clone --private --template davidmasp/dat
 cd <name>
-git remote add template git@github.com:davidmasp/dat.git
+just template-add-remote
 ```
 
-### When checking for template updates run
-
-🚨 NOTE: this will create a bunch of merge conflicts for the
-files that have been updated, you should accept "current"
-changes for the ones that you don't want to be over-written.
+`just template-add-remote` defaults to `git@github.com:davidmasp/dat.git`.
+Pass a different URL if the template lives somewhere else:
 
 ```bash
-git fetch --all
+just template-add-remote git@github.com:org/template-repo.git
+```
+
+### Sync template updates
+
+Start from a clean working tree. The sync happens on a temporary branch so
+template conflicts can be reviewed before merging into your project branch.
+
+```bash
+just template-sync
+```
+
+This runs the same workflow as:
+
+```bash
+git fetch template
+git checkout -b sync/template-updates
 git merge template/main --allow-unrelated-histories
 ```
+
+Resolve any conflicts, commit the merge, test the project, then merge
+`sync/template-updates` into your main project branch. Keep your project version
+of files when you have intentionally diverged from the template.
 
 ### Install the datpy pacakge (one-time)
 

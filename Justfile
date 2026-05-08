@@ -1,4 +1,8 @@
 template_dir := "config/templates"
+template_remote := "template"
+template_url := "git@github.com:davidmasp/dat.git"
+template_ref := "template/main"
+template_sync_branch := "sync/template-updates"
 
 default:
     @just --list
@@ -20,3 +24,17 @@ create-from-template template_name destination_name:
       exit 1; \
     fi; \
     cp -R "$template_path" "{{ destination_name }}"
+
+# Add the upstream template remote once in a generated project.
+template-add-remote url=template_url:
+    git remote add {{ template_remote }} "{{ url }}"
+
+# Fetch upstream template changes.
+template-fetch:
+    git fetch {{ template_remote }}
+
+# Create a sync branch and merge upstream template changes into it.
+template-sync branch=template_sync_branch ref=template_ref:
+    git fetch {{ template_remote }}
+    git checkout -b "{{ branch }}"
+    git merge "{{ ref }}" --allow-unrelated-histories
