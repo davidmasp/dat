@@ -1,0 +1,22 @@
+## Define the local artifact layout by setting a group name, destination
+## folder, and one or more source files to pull into the manuscript.
+
+[[artifacts]]
+name = "figure01"
+path = "./main_artifacts"
+
+[[artifacts.files]]
+name = "panel_a"
+path = "analysis/example/results/panel_a.pdf"
+
+[[artifacts.files]]
+name = "panel_b"
+path = "analysis/example/results/panel_b.pdf"
+
+[[artifacts]]
+name = "supp_table01"
+path = "./supp_artifacts"
+
+[[artifacts.files]]
+name = "table_s1"
+path = "data/example/results/table_s1.csv"
