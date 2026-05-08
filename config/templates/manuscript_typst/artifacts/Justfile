@@ -1,0 +1,5 @@
+copy:
+	uv run scripts/artifacts.py copy --root ../..
+
+check:
+	uv run scripts/artifacts.py check

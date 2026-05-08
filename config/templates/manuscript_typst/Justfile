@@ -1,0 +1,10 @@
+set shell := ["bash", "-cu"]
+
+artifacts:
+  just --justfile artifacts/Justfile copy
+
+check-artifacts:
+  just --justfile artifacts/Justfile check
+
+compile:
+  typst compile --root ../.. manuscript.typ
