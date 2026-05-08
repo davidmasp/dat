@@ -1,10 +1,14 @@
 set shell := ["bash", "-cu"]
 
 artifacts:
-  just --justfile artifacts/Justfile copy
+    just --justfile artifacts/Justfile copy
 
 check-artifacts:
-  just --justfile artifacts/Justfile check
+    just --justfile artifacts/Justfile check
+
+# Convert BibTeX/BibLaTeX references to Hayagriva YAML for Typst.
+bib-to-yaml bib="works.bib" yaml="works.yaml":
+    hayagriva "{{ bib }}" > "{{ yaml }}"
 
 compile:
-  typst compile --root ../.. manuscript.typ
+    typst compile manuscript.typ

@@ -1,0 +1,9 @@
+[[artifacts]]
+name = "example_group"
+path = "main_artifacts"
+
+[[artifacts.files]]
+name = "example_file"
+source_path = "/absolute/path/to/generated/file.pdf"
+local_path = "main_artifacts/example_group/example_file.pdf"
+md5 = "00000000000000000000000000000000"

@@ -12,3 +12,15 @@ Compile the manuscript with:
 ```bash
 just compile
 ```
+
+Convert the sample BibTeX bibliography to Hayagriva YAML for Typst with:
+
+```bash
+just bib-to-yaml
+```
+
+You can also pass explicit paths:
+
+```bash
+just bib-to-yaml references.bib references.yaml
+```

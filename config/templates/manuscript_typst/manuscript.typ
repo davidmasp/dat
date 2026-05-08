@@ -40,8 +40,7 @@
 //   caption: [Example imported panel],
 // )
 
-// Shared text can be included from the reports root when useful:
-// #include "../main_MM/analysis1.typ"
 
 // Bibliography example:
-// #bibliography("../works.yaml")
+// #bibliography("works.yaml")
+

@@ -1,5 +1,4 @@
 .DS_Store
-state.toml
 __pycache__
 
 # Local pulled artifacts are disposable and can be refreshed.
