@@ -42,77 +42,68 @@ Resolve any conflicts, commit the merge, test the project, then merge
 `sync/template-updates` into your main project branch. Keep your project version
 of files when you have intentionally diverged from the template.
 
-### Install the datpy pacakge (one-time)
+### List available templates
 
 ```bash
-cd src/datpy
-pip install .
-cd ../..
+just list-templates
 ```
 
-or using venv and uv
+Current starter folders include:
+
+- `data_external_pipeline`
+- `data_pipeline`
+- `data_simple`
+- `manuscript_simple`
+- `manuscript_typst`
+- `sandbox_simple`
+
+### Create project folders from templates
+
+Copy a template into a destination path relative to the repository root:
 
 ```bash
-cd src/datpy
-uv venv
-source .venv/bin/activate
-uv pip install .
-cd ../..
+just create-from-template <template-name> <destination-path>
 ```
 
-### Create a default folder for data
+For example:
 
 ```bash
-cd data
-dat template -t data_simple -o dataSimple -v "name=My Data Simple Folder"
+just create-from-template data_simple data/my_data_source
+just create-from-template data_pipeline data/my_pipeline
+just create-from-template sandbox_simple sandbox/my_exploratory_analysis
+just create-from-template manuscript_simple manuscripts/my_manuscript
+just create-from-template manuscript_typst manuscripts/my_typst_manuscript
 ```
 
-### Create a new report folder for a quaterly report
+After copying, edit placeholders and local settings directly in the copied
+folder.
+
+### Gather figure panels
+
+The figure workflow is configured by [`figures/input.toml`](figures/input.toml).
+Each panel copy writes checksum state to `figures/state.toml`.
 
 ```bash
-cd reports
-dat template -o Q324 --template reports_simple --variables "name=Q324" 
+just --justfile figures/Justfile copy
+just --justfile figures/Justfile check
 ```
 
-### Create a new container folder
+You can also run these from inside `figures/`:
 
 ```bash
-cd containers
-dat template -t singularity_py -o test_py -v "name=example2Py,version=0.0.2"
+cd figures
+just copy
+just check
 ```
 
-### List the available templates with
+### Manuscripts and reports
 
-```bash
-dat template --root config/templates -l
-```
+Use `manuscripts/` for manuscript-specific folders created from the manuscript
+templates. Use `reports/` for text-based reports, preferably Typst documents.
+See [`reports/README.md`](reports/README.md) for the shared-report workflow.
 
-### Gather relevant panel figures to a central location
+### Nextflow configuration
 
-This command requires a configuration file (`panels.toml`). This is
-by default located in [`figures/panels.toml`](figures/panels.toml), but it
-is not required.
-
-```bash
-dat figures -o
-```
-
-### Build automatically conda environments
-
-See [this](environments/README.md)
-
-### Sync data from a server
-
-We need to set up a config file in the root directory (of the project, for here would be ~/projects/dat) named `.datsync.toml`.
-See [this file](.datsync.toml) as example.
-
-```bash
-# for files
-dat sync file.txt
-# for folders
-dat sync folder --dot
-```
-
-Note that the user needs to be in the same directory as the remote session.
-
-Also note that to sync files in nested directories we need to create the directories locally too.
+Reusable Nextflow profile snippets live in [`config/nextflow`](config/nextflow),
+including local, HPC, Slurm, SGE, conda, micromamba, Apptainer, and Tower
+configuration files.
