@@ -1,0 +1,4 @@
+interface:
+  display_name: "DAT Templates"
+  short_description: "Use DAT repo folder templates"
+  default_prompt: "Use $dat-templates to choose and copy the right DAT starter template in this repository."

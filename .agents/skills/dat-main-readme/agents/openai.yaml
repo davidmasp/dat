@@ -1,0 +1,4 @@
+interface:
+  display_name: "DAT Main README"
+  short_description: "Draft or refresh the repo README"
+  default_prompt: "Use $dat-main-readme to rewrite this repository's top-level README for its current DAT project stage."

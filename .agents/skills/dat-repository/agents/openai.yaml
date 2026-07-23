@@ -1,0 +1,4 @@
+interface:
+  display_name: "DAT Repository"
+  short_description: "Answer general DAT repo questions"
+  default_prompt: "Use $dat-repository to explain or update this DAT-derived repository."

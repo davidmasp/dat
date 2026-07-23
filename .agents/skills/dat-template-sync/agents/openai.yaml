@@ -1,0 +1,4 @@
+interface:
+  display_name: "DAT Template Sync"
+  short_description: "Update a DAT project from upstream"
+  default_prompt: "Use $dat-template-sync to update this existing DAT project from the latest upstream template."
