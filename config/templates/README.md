@@ -1,13 +1,13 @@
 # Templates
 
-Directory with starter folders for project sections such as sandbox,
-data, manuscripts, and containers.
+Directory with starter folders for project sections such as sandbox, data,
+manuscripts, and containers.
 
 ## Usage
 
-These templates are plain files and are meant to be copied with the
-repository `just` rules. Run commands from the repository root, then edit
-placeholders directly in the copied files.
+These templates are plain files and are meant to be copied with the repository
+`just` rules. Run commands from the repository root, then edit placeholders
+directly in the copied files.
 
 ### Example
 

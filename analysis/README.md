@@ -1,7 +1,7 @@
 # Analysis
 
-Use this directory for complete, publication-ready analyses.
+Check the
+[folder structure guide](../.agents/skills/dat-repository/references/folder-structure-guide.md)
+for more information about folder structure and naming conventions.
 
-Create analysis folders with descriptive `snake_case` names, for example:
-- `customer_churn_analysis`
-- `q1_revenue_decomposition`
+---

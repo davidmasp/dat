@@ -1,7 +1,7 @@
 # sandbox_analysis_name
 
-* Date: YYYY-MM-DD
-* Author: YOUR_NAME
+- Date: YYYY-MM-DD
+- Author: YOUR_NAME
 
 ## Usage
 

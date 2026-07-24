@@ -38,3 +38,14 @@ template-sync branch=template_sync_branch ref=template_ref:
     git fetch {{ template_remote }}
     git checkout -b "{{ branch }}"
     git merge "{{ ref }}" --allow-unrelated-histories
+
+# Lint all Markdown files in the repository.
+lint-md:
+    fd -u -tf -e md . . -x prettier --write --prose-wrap always --print-width 80
+
+# Lint all R files in the repository.
+lint-r:
+    fd -tf -e R . . -x air format
+
+# Lint all files in the repository.
+lint: lint-md lint-r

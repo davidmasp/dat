@@ -1,8 +1,7 @@
 # Data
 
-Use this directory for data download, processing, and aggregation workflows.
+Check the
+[folder structure guide](../.agents/skills/dat-repository/references/folder-structure-guide.md)
+for more information about folder structure and naming conventions.
 
-Use explicit `snake_case` names for data folders, for example:
-- `raw_source_downloads`
-- `processed_feature_tables`
-- `aggregated_reporting_inputs`
+---

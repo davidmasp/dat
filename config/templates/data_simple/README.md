@@ -1,7 +1,7 @@
 # data_simple_name
 
-* Date: YYYY-MM-DD
-* Author: YOUR_NAME
+- Date: YYYY-MM-DD
+- Author: YOUR_NAME
 
 ## Docs
 

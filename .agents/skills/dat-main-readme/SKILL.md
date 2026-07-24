@@ -15,6 +15,10 @@ metadata:
 Write the repository's main `README.md` for the current stage of the project,
 not for an abstract ideal version of the repo.
 
+In case the AGENTS.md file is still in template form, query the user for the
+missing project-specific facts that cannot be inferred from the repo and fill it
+out.
+
 ## Workflow
 
 1. Read the current `README.md` and `.dat.docs.md` before proposing structure or
@@ -71,10 +75,14 @@ Later-stage README sections:
 
 Status badges:
 
-- `just started`: `![just started](https://img.shields.io/badge/status-just%20started-lightgrey)`
-- `work in progress`: `![work in progress](https://img.shields.io/badge/status-work%20in%20progress-yellow)`
-- `final artifacts in preparation`: `![final artifacts in preparation](https://img.shields.io/badge/status-final%20artifacts%20in%20preparation-blue)`
-- `published and archived`: `![published and archived](https://img.shields.io/badge/status-published%20and%20archived-green)`
+- `just started`:
+  `![just started](https://img.shields.io/badge/status-just%20started-lightgrey)`
+- `work in progress`:
+  `![work in progress](https://img.shields.io/badge/status-work%20in%20progress-yellow)`
+- `final artifacts in preparation`:
+  `![final artifacts in preparation](https://img.shields.io/badge/status-final%20artifacts%20in%20preparation-blue)`
+- `published and archived`:
+  `![published and archived](https://img.shields.io/badge/status-published%20and%20archived-green)`
 
 ## DAT Structure Notes
 

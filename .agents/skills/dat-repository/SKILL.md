@@ -26,5 +26,9 @@ the repository root.
 - Use `.agents/skills/dat-templates` when the user wants to create a new
   template-based `data`, `analysis`, `metadata`, `models`, `sandbox`, or
   `writting` folder.
-- Use `.agents/skills/dat-main-readme` when the user wants to update the
-  current repository's top-level `README.md`.
+- Use `.agents/skills/dat-main-readme` when the user wants to update the current
+  repository's top-level `README.md`.
+
+## References
+
+- Read `references/models-guide.md` when you need info ...

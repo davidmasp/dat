@@ -1,9 +1,23 @@
 
-# mac specific
+# macOS
 .DS_Store
 
-## Over the whole project
+# Environment and Python artifacts
 .env
+.venv/
+__pycache__/
+*.py[cod]
 
-# no git directories
+# Local metadata workbooks and Office temp files
+metadata/metadata.xlsx
+~$*.xlsx
+
+# Local analysis artifacts
+*.csv
+*.pdf
+*.rds
+*.old
+
+# Local tool state
 *.nogit
+.Rproj.user

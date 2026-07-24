@@ -1,4 +1,4 @@
-# Models
+# Writting
 
 Check the
 [folder structure guide](../.agents/skills/dat-repository/references/folder-structure-guide.md)

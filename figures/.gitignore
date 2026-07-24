@@ -1,7 +1,0 @@
-.DS_Store
-
-# the figures themselves are excluded
-*.pdf
-*.png
-state.toml
-__pycache__

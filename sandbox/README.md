@@ -1,4 +1,7 @@
 # Sandbox
 
-Use this directory for temporary analyses, drafts, and experiments that are
-not ready to be published in their current form.
+Check the
+[folder structure guide](../.agents/skills/dat-repository/references/folder-structure-guide.md)
+for more information about folder structure and naming conventions.
+
+---

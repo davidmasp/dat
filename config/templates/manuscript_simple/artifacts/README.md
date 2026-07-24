@@ -3,15 +3,15 @@
 `input.toml` defines which generated files should be pulled into this
 manuscript-local `artifacts/` folder.
 
-`state.toml` stores the copied local paths plus md5 hashes so you can
-check whether the local copies still match what was pulled.
+`state.toml` stores the copied local paths plus md5 hashes so you can check
+whether the local copies still match what was pulled.
 
 ## Structure
 
 - `[[artifacts]]`: starts a new artifact block.
 - `name`: logical artifact group name, unique within the file.
-- `path`: base output folder for that group, for example
-  `./main_artifacts` or `./supp_artifacts`.
+- `path`: base output folder for that group, for example `./main_artifacts` or
+  `./supp_artifacts`.
 - `[[artifacts.files]]`: adds one file to the group.
 - `name`: local name to assign to the copied file.
 - `path`: source path of the generated file to pull.
