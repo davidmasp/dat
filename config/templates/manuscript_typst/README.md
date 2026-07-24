@@ -2,10 +2,9 @@
 
 Minimal starter folder for a Typst manuscript.
 
-Keep manuscript text and local pulled assets together here. The `artifacts/`
-subfolder is the manuscript-local equivalent of the current global `figures/`
-workflow: configure source files in `artifacts/input.toml`, pull them locally,
-and verify them with checksums.
+Keep manuscript text and local pulled assets together here. Use the
+`artifacts/` subfolder to configure source files in `artifacts/input.toml`, pull
+them locally, and verify them with checksums.
 
 Compile the manuscript with:
 
