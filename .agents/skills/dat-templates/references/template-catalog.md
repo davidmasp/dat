@@ -10,10 +10,6 @@ how the repo's template copy flow works.
 - `just list-templates`: list the directories directly under `config/templates`.
 - `just create-from-template <template-name> <destination-path>`: copy one
   template folder to a repo-relative destination.
-- `just template-add-remote`: add the upstream DAT template remote to a
-  generated repository.
-- `just template-sync`: fetch `template/main`, create `sync/template-updates`,
-  and merge upstream template changes for review.
 
 `create-from-template` fails if:
 

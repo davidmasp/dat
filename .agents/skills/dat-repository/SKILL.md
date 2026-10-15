@@ -21,8 +21,6 @@ the repository root.
 
 ## Related Skills
 
-- Use `.agents/skills/dat-template-sync` when the user wants to update this
-  project from the newest DAT template.
 - Use `.agents/skills/dat-templates` when the user wants to create a new
   template-based `data`, `analysis`, `metadata`, `models`, `sandbox`, or
   `writting` folder.
