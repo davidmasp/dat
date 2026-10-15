@@ -1,0 +1,5 @@
+interface:
+  display_name: "DAT Atomic Folder"
+  short_description: "Define reproducible atomic analysis and data folders"
+policy:
+  allow_implicit_invocation: false
