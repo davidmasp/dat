@@ -1,0 +1,17 @@
+# Edit legends as figures are produced; rebuild from the atomic folder root:
+# uv run scripts/build_figure_gallery.py
+title = "Figure library"
+description = ""
+
+# Sections and plots follow TOML declaration order; unlisted entries follow.
+# Section keys are top-level folders under figures/ (or "." for root plots).
+# Plot keys are paths under figures/ without the final extension.
+# Use quoted keys so dots and slashes stay literal. Descriptions are plain text.
+
+# [sections."qc"]
+# title = "Quality control"
+# description = "Explain the population, shared encodings, and relevant methods."
+
+# [plots."qc/coverage"]
+# title = "Coverage by sample"
+# description = "Explain the axes, units, groups, filters, and supported interpretation."

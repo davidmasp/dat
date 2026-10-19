@@ -1,0 +1,3 @@
+interface:
+  display_name: "Figure Gallery"
+  short_description: "Build offline galleries from existing analysis figures"

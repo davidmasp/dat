@@ -122,6 +122,16 @@ in `results/`. Pipeline outputs belong in `results/`, including tabular outputs.
 Create output directories in the generating code or its recipe, so a fresh
 checkout can reproduce them.
 
+## Figure galleries
+
+When a figure gallery is requested, use the companion
+[`figure-gallery`](../figure-gallery/SKILL.md) skill. It builds an offline library
+from existing `figures/<topic>/` outputs, with authored legends in the tracked
+root `figures.legends.toml`, a shared HTML template, and a portable ZIP. Update
+legends as plots are produced when maintaining an existing gallery. Keep the
+builder and template under `scripts/` and the generated gallery under ignored
+`figures/`; gallery builds do not rerun analyses.
+
 ## Factorizing recipes
 
 Keep recipes in the root `Justfile` until it has more than six recipes. Beyond
